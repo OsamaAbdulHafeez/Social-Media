@@ -12,7 +12,7 @@ const {authRouter} = require("./routes/authRouter.js")
 const postRouter = require("./routes/postRouter.js")
 
 const corsconfig = {
-    origin:"https://social-media-omega-ivory.vercel.app",
+    origin:["https://social-media-omega-ivory.vercel.app"],
     methods:["POST","PUT","DELETE","GET"],
     credentials:true
 }
