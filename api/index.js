@@ -26,7 +26,7 @@ app.use(express.json())
 app.use(helmet())
 app.use(morgan("common"))
 app.use(cors(corsconfig))
-app.options('',cors(corsconfig))
+// app.options('',cors(corsconfig))
 app.get('/', (req, res) => {
     res.send("welcome to home page")
 })
@@ -43,7 +43,7 @@ const storage = multer.diskStorage({
         cb(null, "public/images")
     },
     filename: (req, file, cb) => {
-        cb(null, req.body.name);
+        cb(null, Date.now() + "-" + file.originalname);
     }
 })
 const upload = multer({ storage });
